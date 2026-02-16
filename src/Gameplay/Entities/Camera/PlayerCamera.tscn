@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://brwyoo4xjyy2f"]
+
+[ext_resource type="Script" uid="uid://yrujfvq68pr1" path="res://src/Core/Scripts/Camera/CameraRig.gd" id="1_3io7j"]
+[ext_resource type="Script" uid="uid://cgk86yxermj2p" path="res://src/Core/Scripts/Camera/PlayerCamera.gd" id="2_hl2ed"]
+
+[node name="CameraRig" type="Node3D"]
+script = ExtResource("1_3io7j")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+fov = 22.0
+script = ExtResource("2_hl2ed")

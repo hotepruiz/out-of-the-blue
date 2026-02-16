@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bavw5iqokdl02"
+path.s3tc="res://.godot/imported/SIG _Sig verde.png-121134cca8e6b30d11d49f27641371f5.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "8158aae35243a83653ad184f07d9bf18"
+}
+
+[deps]
+
+source_file="res://src/Resources/3D/Raw/Weapons/Rifles/SIG/SIG _Sig verde.png"
+dest_files=["res://.godot/imported/SIG _Sig verde.png-121134cca8e6b30d11d49f27641371f5.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

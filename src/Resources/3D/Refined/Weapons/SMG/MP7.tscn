@@ -1,0 +1,132 @@
+[gd_scene load_steps=12 format=3 uid="uid://33pal6m0yo7w"]
+
+[ext_resource type="PackedScene" uid="uid://cq80032261laa" path="res://src/Resources/3D/Raw/Weapons/SMG/MP7/mp7.glb" id="1_oiws1"]
+[ext_resource type="Shader" uid="uid://cvscvomuivpo1" path="res://src/Resources/Shaders/GdShaders/CellShading.gdshader" id="2_owaek"]
+[ext_resource type="Texture2D" uid="uid://1ehwnndb55m7" path="res://src/Resources/Shaders/Samples/BaseCellShadingSample.tres" id="3_o8iha"]
+[ext_resource type="Texture2D" uid="uid://biprgq3l6rde5" path="res://src/Resources/Shaders/Samples/fresnel2.tres" id="4_72j4p"]
+[ext_resource type="Texture2D" uid="uid://cyjabk5csd5yw" path="res://src/Resources/3D/Raw/Weapons/SMG/MP7/mp7_Accesoriosmp7.png" id="5_owaek"]
+[ext_resource type="Texture2D" uid="uid://b6mi4sukejuqo" path="res://src/Resources/3D/Raw/Weapons/SMG/MP7/mp7_cuerpomp7.png" id="6_uof2y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4u6q"]
+render_priority = 0
+shader = ExtResource("2_owaek")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("5_owaek")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(1, 1, 1)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(1, 1, 1)
+shader_parameter/gradiente_color = ExtResource("3_o8iha")
+shader_parameter/gradiente_fresnel = ExtResource("4_72j4p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnog7"]
+render_priority = 0
+shader = ExtResource("2_owaek")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_uof2y")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(1, 1, 1)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(1, 1, 1)
+shader_parameter/gradiente_color = ExtResource("3_o8iha")
+shader_parameter/gradiente_fresnel = ExtResource("4_72j4p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owaek"]
+render_priority = 0
+shader = ExtResource("2_owaek")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_uof2y")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(1, 1, 1)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(1, 1, 1)
+shader_parameter/gradiente_color = ExtResource("3_o8iha")
+shader_parameter/gradiente_fresnel = ExtResource("4_72j4p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8iha"]
+render_priority = 0
+shader = ExtResource("2_owaek")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("5_owaek")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(1, 1, 1)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(1, 1, 1)
+shader_parameter/gradiente_color = ExtResource("3_o8iha")
+shader_parameter/gradiente_fresnel = ExtResource("4_72j4p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j6ys6"]
+render_priority = 0
+shader = ExtResource("2_owaek")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_uof2y")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(1, 1, 1)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(1, 1, 1)
+shader_parameter/gradiente_color = ExtResource("3_o8iha")
+shader_parameter/gradiente_fresnel = ExtResource("4_72j4p")
+
+[node name="mp7" instance=ExtResource("1_oiws1")]
+
+[node name="mira1" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7129, 0.563912, -0.000672286)
+
+[node name="Cargador" parent="." index="6"]
+surface_material_override/0 = SubResource("ShaderMaterial_v4u6q")
+
+[node name="Empty" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, 0, 0, 3.02197)
+
+[node name="switch" parent="." index="9"]
+transform = Transform3D(0.830585, -0.556891, 0, 0.556891, 0.830585, 0, 0, 0, 0.355716, 0.924747, 0.136102, 0.122392)
+
+[node name="handle" parent="." index="10"]
+transform = Transform3D(0.00893997, 0, 0, 0, 0.0554123, 0, 0, 0, -0.0579779, 2.05727, 0.47223, -0.0601337)
+
+[node name="cuerpo" parent="." index="11"]
+surface_material_override/0 = SubResource("ShaderMaterial_fnog7")
+
+[node name="culata" parent="." index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17589, 0.00839971, -0.000599623)
+surface_material_override/0 = SubResource("ShaderMaterial_owaek")
+
+[node name="Cylinder" parent="." index="13"]
+surface_material_override/0 = SubResource("ShaderMaterial_o8iha")
+
+[node name="padding" parent="." index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.12916, 1.4535, 0.322041, 0.00119879)
+surface_material_override/0 = SubResource("ShaderMaterial_j6ys6")
+
+[node name="Plane" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15732, 0.214154, -0.104587)

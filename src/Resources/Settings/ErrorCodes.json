@@ -1,0 +1,15 @@
+{
+  "OTB#001": {
+	"Message": "Funcion Handler Sin Override",
+	"Reason": "Lanzado cuando un nodo no ha hecho override de una funcion Handle(). Probablemente un nodo heredado"
+  },
+  "OTB#002": {
+	"Message": "InteractionHandler sin override en _OnInteract()",
+	"Reason": "Lanzado cuando un nodo que hereda de InteractionHandler no ha descrito un comportamiento de interaccion"
+  },
+	"OTB#003": {
+	"Message": "ComponentsContainer sin componentes",
+	"Reason": "Lanzado cuando un nodo ComponentsContainer no tiene ningun nodo hijo"
+  }
+
+}

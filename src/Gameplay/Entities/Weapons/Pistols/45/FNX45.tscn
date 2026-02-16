@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpsexp5r57pws"]
+
+[ext_resource type="PackedScene" uid="uid://cvn52pfh1w6by" path="res://src/Resources/3D/Refined/Weapons/Pistols/Fnx45_model.tscn" id="1_kpbb7"]
+[ext_resource type="Script" uid="uid://cgmriung8mvmu" path="res://src/Core/Scripts/Components/ComponentContainer.gd" id="2_ferru"]
+[ext_resource type="Script" uid="uid://c5msno0f7hf5e" path="res://src/Gameplay/Scripts/Components/PickableWeaponInteractionHandler.gd" id="3_d6eic"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kpbb7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ferru"]
+size = Vector3(0.856445, 3.19916, 5.72498)
+
+[node name="Fnx45" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_kpbb7")
+inertia = Vector3(0, 2.65, 0)
+
+[node name="FNX45_MODEL" parent="." instance=ExtResource("1_kpbb7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00927734, 0.0252991, 0.319031)
+shape = SubResource("BoxShape3D_ferru")
+
+[node name="ComponentContainer" type="Node" parent="."]
+script = ExtResource("2_ferru")
+metadata/_custom_type_script = "uid://cgmriung8mvmu"
+
+[node name="PickableWeaponInteractionHandler" type="Node" parent="ComponentContainer"]
+script = ExtResource("3_d6eic")
+metadata/_custom_type_script = "uid://c5msno0f7hf5e"

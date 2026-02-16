@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://chm65jedj15qt"]
+
+[ext_resource type="Script" uid="uid://d3psuiv4x4tkk" path="res://src/Gameplay/Levels/node.gd" id="1_tp8c8"]
+[ext_resource type="PackedScene" uid="uid://2r6b1bionkvp" path="res://src/Gameplay/Entities/Player/Player.tscn" id="4_ycxtk"]
+[ext_resource type="Script" uid="uid://dq8thfma3ay2j" path="res://src/Core/Scripts/Player/InputSystem.gd" id="5_tfum8"]
+[ext_resource type="PackedScene" uid="uid://brwyoo4xjyy2f" path="res://src/Gameplay/Entities/Camera/PlayerCamera.tscn" id="6_f362k"]
+[ext_resource type="PackedScene" uid="uid://dpsexp5r57pws" path="res://src/Gameplay/Entities/Weapons/Pistols/45/FNX45.tscn" id="6_gv22m"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_tfum8"]
+turbidity = 0.0
+sun_disk_scale = 0.0
+ground_color = Color(0, 0.682973, 0.267582, 1)
+
+[sub_resource type="Sky" id="Sky_f362k"]
+sky_material = SubResource("PhysicalSkyMaterial_tfum8")
+
+[sub_resource type="Environment" id="Environment_tfum8"]
+background_mode = 2
+sky = SubResource("Sky_f362k")
+sky_custom_fov = 9.1
+ambient_light_color = Color(0.663679, 0.545121, 0.424025, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_tp8c8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17993, -0.154807, -6.24084)
+use_collision = true
+size = Vector3(19.1938, 0.279297, 26.7502)
+
+[node name="Player" parent="." node_paths=PackedStringArray("_InputSystem", "_Camera") instance=ExtResource("4_ycxtk")]
+transform = Transform3D(-0.0356844, -0.999363, 0, 0.999363, -0.0356844, 0, 0, 0, 1, 0, 0.443755, 0)
+_InputSystem = NodePath("../InputSystem")
+_Camera = NodePath("../CameraRig")
+
+[node name="InputSystem" type="Node" parent="."]
+script = ExtResource("5_tfum8")
+metadata/_custom_type_script = "uid://dq8thfma3ay2j"
+
+[node name="CameraRig" parent="." node_paths=PackedStringArray("_Player", "_InputSystem") instance=ExtResource("6_f362k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.973277, 1.32008)
+_Player = NodePath("../Player")
+_InputSystem = NodePath("../InputSystem")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tfum8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.203608, 0.979053, 0, -0.509819, -0.106024, 0.853724, 0.83584, 0.173825, 0.520727, 0, 14.5315, 0)
+light_color = Color(0.86504, 0.792619, 0.872896, 1)
+
+[node name="Fnx45" parent="." instance=ExtResource("6_gv22m")]
+transform = Transform3D(0.765708, -0.643189, 0, 0.643189, 0.765708, 0, 0, 0, 1, 0.300896, 10.222, -17.5055)
