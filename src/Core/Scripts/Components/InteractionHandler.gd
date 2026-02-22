@@ -1,12 +1,16 @@
 extends Node
 class_name InteractionHandler
 
-signal Interacted(interacted_by: Node)
+@warning_ignore("unused_signal")
 signal InteractionFailed(interacted_by: Node)
+signal Interacted(interacted_by: Node)
 
 @export var Enabled: bool = true
 @export var OneShot: bool = false
 @export var Cooldown: float = 0.0 
+
+@warning_ignore("unused_private_class_variable")
+@onready var _HandlerOwner = get_parent().get_parent()
 
 var _last_interaction_time: float = -INF
 var _already_used: bool = false
@@ -24,6 +28,7 @@ func Interact(interacted_by: Node) -> void:
 	_OnInteract(interacted_by)
 	emit_signal("Interacted", interacted_by)
 
+@warning_ignore("unused_parameter")
 func _OnInteract(interacted_by: Node) -> void:
 	ErrorHandlerUtil.LogWarning("OTB#002")
 

@@ -8,8 +8,8 @@ class_name CameraRig
 func _process(delta: float) -> void:
 	_FollowPlayer()
 	look_at(_Player.global_position)
-	self.global_position.y = 25
+	self.global_position.y = 10
 
 func _FollowPlayer():
-	self.global_position.x = _Player.global_position.x +20
-	self.global_position.z = _Player.global_position.z +20
+	self.global_position.x = _Player.global_position.x +10
+	self.global_position.z = _Player.global_position.z +10

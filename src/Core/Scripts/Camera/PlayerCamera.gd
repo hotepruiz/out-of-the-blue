@@ -46,4 +46,4 @@ func _TryInteract():
 	
 	var interaction_handler : InteractionHandler = component_container.GetInteractionHandlerOrNull()
 	if interaction_handler:
-		interaction_handler.Interact(self)
+		interaction_handler.Interact(_Player)

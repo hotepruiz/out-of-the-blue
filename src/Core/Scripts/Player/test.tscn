@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dreef7xv4mak0"]
+[gd_scene format=3 uid="uid://dreef7xv4mak0"]
 
 [ext_resource type="Script" uid="uid://dq8thfma3ay2j" path="res://src/Core/Scripts/Player/InputSystem.gd" id="1_yf7bd"]
 
-[node name="Test" type="Node"]
+[node name="Test" type="Node" unique_id=1329358103]
 script = ExtResource("1_yf7bd")
 metadata/_custom_type_script = "uid://dq8thfma3ay2j"

@@ -23,11 +23,12 @@ func LogWarning(code: String) -> void:
 			caller.get("function", "???")
 		]
 
-	var msg := "\nError Source: %s\nErrorCode: %s\nErrorMessage: %s\nErrorReason: %s\n" % [
+	var msg := "\nError Source: %s\nErrorCode: %s\nErrorMessage: %s\nErrorReason: \nErrorType: %s\n" % [
 		caller_info,
 		code,
 		error.get("Message", "Mensaje no definido"),
-		error.get("Reason", "Razón no definida")
+		error.get("Reason", "Razón no definida"),
+		error.get("Type", "Tipo no definido")
 	]
 	
 	push_warning(msg)
@@ -50,11 +51,12 @@ func LogError(code: String) -> void:
 			caller.get("function", "???")
 		]
 
-	var msg := "\nError Source: %s\nErrorCode: %s\nErrorMessage: %s\nErrorReason: %s\n" % [
+	var msg := "\nError Source: %s\nErrorCode: %s\nErrorMessage: %s\nErrorReason: %s \nErrorType: %s\n" % [
 		caller_info,
 		code,
 		error.get("Message", "Mensaje no definido"),
-		error.get("Reason", "Razón no definida")
+		error.get("Reason", "Razón no definida"),
+		error.get("Type", "Tipo no definido")
 	]
 	
 	push_error(msg)
