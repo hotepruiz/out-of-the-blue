@@ -5,13 +5,19 @@ class_name Player
 @export var _Camera : CameraRig
 
 @export var Speed: float = 6.0
-@export var Acceleration: float = 10.0
+@export var Acceleration: float = 50.0
 @export var Friction: float = 12.0
 @export var Gravity: float = 20.0
+
+signal fire_weapon
+
+@onready var PrimaryWeaponSocket: Marker3D = $PrimaryWeaponSocket 
+@onready var SecondaryWeaponSocket: Marker3D = $SecondaryWeaponSocket
 
 func _ready():
 	_ConnectToInputSystem(_InputSystem)
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	pass
 
@@ -27,7 +33,7 @@ func _ConnectToInputSystem(input_system: InputSystem):
 	input_system.move_input.connect(_OnMovement)
 
 func _OnFirePressed():
-	pass
+	emit_signal("fire_weapon", Vector3(0,0,0))
 
 func _OnMovement(dir: Vector2):
 	if _Camera == null:

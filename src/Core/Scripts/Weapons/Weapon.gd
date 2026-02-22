@@ -1,33 +1,53 @@
 extends Node3D
 class_name Weapon
 
-signal fired
+@export_range(1, 1200,0.1) var Firerate : float
+@export var MagazineSize: int = 30
+@export var Proyectile: PackedScene
 
-@export var magazine_size: int = 30
-@export var fire_rate: float = 0.1
-@export var projectile_scene: PackedScene
+@onready var _AudioPlayer : AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var _Muzzle : Marker3D = $Muzzle
+@onready var _CooldownTimer : Timer = $Timer
+@onready var _Ejection : Marker3D = $Ejection
+var _AnimationPlayer : AnimationPlayer
 
-var ammo: int
-var can_fire := true
+var Ammo: int
+var _CanFire: bool = true
+var _TriggerPressed: bool = true
+
+func _ready():
+	_SetFirerate()
 
 func TryFire(direction: Vector3):
-	if not can_fire or ammo <= 0:
+	if _TriggerPressed and _CooldownTimer.is_stopped() and _CanFire:
+		_Fire(direction)
+
+@warning_ignore("unused_parameter")
+func _Fire(direction: Vector3):
+	_InstanceAudio()
+	_PlayAnimation()
+
+func SetTrigger(new_trigger_status: bool):
+	_TriggerPressed = new_trigger_status
+
+#---------------------------------------------------------------------------------------------------
+@warning_ignore("unused_parameter")
+func _FireProjectile(direction: Vector3):
+	ErrorHandlerUtil.LogWarning("OTB#004")
+
+func _InstanceAudio():
+	var new_audio_player = _AudioPlayer.duplicate()
+	self.add_child(new_audio_player)
+	new_audio_player.global_position = _Muzzle.global_position
+	new_audio_player.pitch_scale += randf_range(-0.07,0.07)
+	new_audio_player.playing = true
+
+func _PlayAnimation():
+	if not _AnimationPlayer:
+		ErrorHandlerUtil.LogError("OTB#005")
 		return
 	
-	ammo -= 1
-	can_fire = false
-	
-	_Fire(direction)
-	emit_signal("fired")
-	
-	await get_tree().create_timer(fire_rate).timeout
-	can_fire = true
-
-func _Fire(direction: Vector3):
-	_FireProjectile(direction)
-
-func _FireProjectile(direction: Vector3):
-	var p = projectile_scene.instantiate()
-	get_tree().current_scene.add_child(p)
-	p.global_position = $Muzzle.global_position
-	p.init(direction)
+	_AnimationPlayer.play(WeaponEnums.AnimationType.keys()[WeaponEnums.AnimationType.FIRE])
+#---------------------------------------------------------------------------------------------------
+func _SetFirerate():
+	_CooldownTimer.wait_time=(60/Firerate)

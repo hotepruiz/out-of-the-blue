@@ -1,15 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://2r6b1bionkvp"]
+[gd_scene format=3 uid="uid://2r6b1bionkvp"]
 
 [ext_resource type="Script" uid="uid://cehebuhhppaul" path="res://src/Core/Scripts/Player/Player.gd" id="1_ljuuj"]
 [ext_resource type="PackedScene" uid="uid://cvn52pfh1w6by" path="res://src/Resources/3D/Refined/Weapons/Pistols/Fnx45_model.tscn" id="2_o8msy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o8msy"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=962924011]
 script = ExtResource("1_ljuuj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=127784394]
 shape = SubResource("CapsuleShape3D_o8msy")
 
-[node name="fnx45" parent="." instance=ExtResource("2_o8msy")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+[node name="fnx45" parent="." unique_id=1678197408 instance=ExtResource("2_o8msy")]
+transform = Transform3D(-0.69618917, -5.5725586e-08, 0.0009854859, -6.110852e-08, 0.64, 0, 0.06262315, 5.0125912e-09, 0.010955767, 0, 0, 0)
+
+[node name="PrimaryWeaponSocket" type="Marker3D" parent="." unique_id=754816785]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7476144)
+
+[node name="SecondaryWeaponSocket" type="Marker3D" parent="." unique_id=570990695]
+transform = Transform3D(1, 0, 0, 0, -0.0015707447, 0.99999875, 0, -0.99999875, -0.0015707447, 0, 0.3151552, -0.921221)

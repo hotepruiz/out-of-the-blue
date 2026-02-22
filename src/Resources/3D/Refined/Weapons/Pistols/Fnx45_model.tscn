@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvn52pfh1w6by"]
+[gd_scene format=3 uid="uid://cvn52pfh1w6by"]
 
 [ext_resource type="PackedScene" uid="uid://bqcv65i5l4nfj" path="res://src/Resources/3D/Raw/Weapons/Pistols/45/fnx45.glb" id="1_5dog0"]
 [ext_resource type="Shader" uid="uid://cvscvomuivpo1" path="res://src/Resources/Shaders/GdShaders/CellShading.gdshader" id="2_hvh4e"]
@@ -43,14 +43,14 @@ shader_parameter/uv2_offset = Vector3(1, 1, 1)
 shader_parameter/gradiente_color = ExtResource("3_x0b4e")
 shader_parameter/gradiente_fresnel = ExtResource("4_2l3s0")
 
-[node name="FNX45_MODEL" instance=ExtResource("1_5dog0")]
+[node name="FNX45_MODEL" unique_id=1716157212 instance=ExtResource("1_5dog0")]
 
 [node name="Corredera" parent="." index="0"]
-transform = Transform3D(0.900421, 0, 0, 0, 1, 0, 0, 0, 1, -0.00756242, 1.27688, 0.609987)
+transform = Transform3D(0.900421, 0, 0, 0, 1, 0, 0, 0, 1, -0.00756242, 1.276877, -0.15465674)
 surface_material_override/0 = SubResource("ShaderMaterial_x0b4e")
 
 [node name="Handle" parent="." index="1"]
 surface_material_override/0 = SubResource("ShaderMaterial_2l3s0")
 
 [node name="martillo" parent="." index="3"]
-transform = Transform3D(0.99985, -9.12976e-05, 0.0173168, -0.0129203, 0.661887, 0.749493, -0.0115302, -0.749604, 0.661786, -0.00151431, 1.03949, 2.29476)
+transform = Transform3D(0.99984986, -9.1297574e-05, 0.017316798, -0.012920318, 0.66188675, 0.7494927, -0.01153018, -0.7496041, 0.6617862, -0.00151431, 1.03949, 2.29476)

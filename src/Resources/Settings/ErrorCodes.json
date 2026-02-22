@@ -1,15 +1,28 @@
 {
   "OTB#001": {
 	"Message": "Funcion Handler Sin Override",
-	"Reason": "Lanzado cuando un nodo no ha hecho override de una funcion Handle(). Probablemente un nodo heredado"
+	"Reason": "Lanzado cuando un nodo no ha hecho override de una funcion Handle(). Probablemente un nodo heredado",
+	"Type" : "BehaviourHandlerError"
   },
   "OTB#002": {
 	"Message": "InteractionHandler sin override en _OnInteract()",
-	"Reason": "Lanzado cuando un nodo que hereda de InteractionHandler no ha descrito un comportamiento de interaccion"
+	"Reason": "Lanzado cuando un nodo que hereda de InteractionHandler no ha descrito un comportamiento de interaccion",
+	"Type" : "BehaviourHandlerError"
   },
 	"OTB#003": {
 	"Message": "ComponentsContainer sin componentes",
-	"Reason": "Lanzado cuando un nodo ComponentsContainer no tiene ningun nodo hijo"
+	"Reason": "Lanzado cuando un nodo ComponentsContainer no tiene ningun nodo hijo",
+	"Type" : "BehaviourHandlerError"
+  },
+	"OTB#004": {
+	"Message": "Funciónes de clase Weapon base sin Override",
+	"Reason": "Lanzado cuando un nodo que herreda de Weapon no hace override de los metodos _TryFire o Fire",
+	"Type" : "WeaponSetupError"
+  },
+	"OTB#005": {
+	"Message": "Arma no tiene seteado un animation player",
+	"Reason": "Lanzado cuando se intenta disparar un arma y este no tiene un animationplayer seteado",
+	"Type" : "WeaponSetupError"
   }
 
 }
