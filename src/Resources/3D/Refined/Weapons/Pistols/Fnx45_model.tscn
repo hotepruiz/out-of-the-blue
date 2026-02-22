@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://biprgq3l6rde5" path="res://src/Resources/Shaders/Samples/fresnel2.tres" id="4_2l3s0"]
 [ext_resource type="Texture2D" uid="uid://dqi6nu7ijnyaj" path="res://src/Resources/3D/Raw/Weapons/Pistols/45/fnx45_Corredera.png" id="5_hvh4e"]
 [ext_resource type="Texture2D" uid="uid://c2nen88533yo4" path="res://src/Resources/3D/Raw/Weapons/Pistols/45/fnx45_Handle.png" id="5_xa3k5"]
+[ext_resource type="Script" uid="uid://b4y2owwmj152v" path="res://src/Core/Scripts/Weapons/WeaponAnimationPlayer.gd" id="7_a65i4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x0b4e"]
 render_priority = 0
@@ -43,6 +44,97 @@ shader_parameter/uv2_offset = Vector3(1, 1, 1)
 shader_parameter/gradiente_color = ExtResource("3_x0b4e")
 shader_parameter/gradiente_fresnel = ExtResource("4_2l3s0")
 
+[sub_resource type="Animation" id="Animation_0i0cm"]
+resource_name = "CorrederaAction"
+length = 0.29166666
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Corredera")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.00756242, 1.276877, -0.15465674, 0.033333335, 1, -0.00756242, 1.276877, -0.15465674, 0.06666667, 1, -0.00756242, 1.276877, 0.566887, 0.1, 1, -0.00756242, 1.276877, 0.99788904, 0.13333334, 1, -0.00756242, 1.276877, 0.8632008, 0.16666667, 1, -0.00756242, 1.276877, 0.6246104, 0.2, 1, -0.00756242, 1.276877, 0.3398412, 0.23333333, 1, -0.00756242, 1.276877, 0.089705974, 0.26666668, 1, -0.00756242, 1.276877, -0.07961632, 0.29166666, 1, -0.00756242, 1.276877, -0.15465674)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("martillo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.41114998, 0.007911721, -0.0035185546, 0.9115266)
+
+[sub_resource type="Animation" id="Animation_22kew"]
+resource_name = "Cube_001Action_001"
+length = 0.29166666
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("martillo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.41114998, 0.007911721, -0.003518555, 0.9115266, 0.033333335, 1, -0.41114998, 0.007911721, -0.003518555, 0.9115266, 0.06666667, 1, 0.045516536, 0.0054868977, -0.007912145, 0.9989172, 0.1, 1, 0.3368594, 0.0029032952, -0.010209425, 0.9414952, 0.13333334, 1, 0.29912746, 0.0023295265, -0.0106184175, 0.95415133, 0.16666667, 1, 0.23117125, 0.0016127968, -0.010597998, 0.972854, 0.2, 1, 0.14859025, 0.0008399966, -0.010484277, 0.98884296, 0.23333333, 1, 0.07516609, 0.00016597027, -0.010429108, 0.99711657, 0.26666668, 1, 0.025206167, -0.00028777018, -0.010410229, 0.99962807, 0.29166666, 1, 0.003037338, -0.00048805986, -0.010417049, 0.99994105)
+tracks/1/type = "position_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Corredera")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.00756242, 1.276877, -0.15465674)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f07qb"]
+_data = {
+&"CorrederaAction": SubResource("Animation_0i0cm"),
+&"Cube_001Action_001": SubResource("Animation_22kew")
+}
+
+[sub_resource type="Animation" id="Animation_2uw32"]
+resource_name = "FIRE"
+length = 0.29166666
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Corredera")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.00756242, 1.276877, -0.15465674, 0.033333335, 1, -0.00756242, 1.276877, -0.15465674, 0.06666667, 1, -0.00756242, 1.276877, 0.566887, 0.1, 1, -0.00756242, 1.276877, 0.99788904, 0.13333334, 1, -0.00756242, 1.276877, 0.8632008, 0.16666667, 1, -0.00756242, 1.276877, 0.6246104, 0.2, 1, -0.00756242, 1.276877, 0.3398412, 0.23333333, 1, -0.00756242, 1.276877, 0.089705974, 0.26666668, 1, -0.00756242, 1.276877, -0.07961632, 0.29166666, 1, -0.00756242, 1.276877, -0.15465674)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("martillo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.033333335, 1, -0.41114998, 0.007911721, -0.003518555, 0.9115266, 0.06666667, 1, -0.41114998, 0.007911721, -0.003518555, 0.9115266, 0.10000001, 1, 0.045516536, 0.0054868977, -0.007912145, 0.9989172, 0.13333334, 1, 0.3368594, 0.0029032952, -0.010209425, 0.9414952, 0.16666667, 1, 0.29912746, 0.0023295265, -0.0106184175, 0.95415133, 0.2, 1, 0.23117125, 0.0016127968, -0.010597998, 0.972854, 0.23333333, 1, 0.14859025, 0.0008399966, -0.010484277, 0.98884296, 0.26666668, 1, 0.07516609, 0.00016597027, -0.010429108, 0.99711657, 0.3, 1, 0.025206167, -0.00028777018, -0.010410229, 0.99962807, 0.325, 1, 0.003037338, -0.00048805986, -0.010417049, 0.99994105)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("martillo")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array()
+
+[sub_resource type="Animation" id="Animation_a65i4"]
+resource_name = "rotation"
+length = 0.29166666
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("martillo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.41114998, 0.007911721, -0.003518555, 0.9115266, 0.033333335, 1, -0.41114998, 0.007911721, -0.003518555, 0.9115266, 0.06666667, 1, 0.045516536, 0.0054868977, -0.007912145, 0.9989172, 0.1, 1, 0.3368594, 0.0029032952, -0.010209425, 0.9414952, 0.13333334, 1, 0.29912746, 0.0023295265, -0.0106184175, 0.95415133, 0.16666667, 1, 0.23117125, 0.0016127968, -0.010597998, 0.972854, 0.2, 1, 0.14859025, 0.0008399966, -0.010484277, 0.98884296, 0.23333335, 1, 0.07516609, 0.00016597027, -0.010429108, 0.99711657, 0.26666668, 1, 0.025206167, -0.00028777018, -0.010410229, 0.99962807, 0.29166666, 1, 0.003037338, -0.00048805986, -0.010417049, 0.99994105)
+tracks/1/type = "position_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Corredera")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.00756242, 1.276877, -0.15465674)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kgvwc"]
+_data = {
+&"FIRE": SubResource("Animation_2uw32"),
+&"rotation": SubResource("Animation_a65i4")
+}
+
 [node name="FNX45_MODEL" unique_id=1716157212 instance=ExtResource("1_5dog0")]
 
 [node name="Corredera" parent="." index="0"]
@@ -53,4 +145,10 @@ surface_material_override/0 = SubResource("ShaderMaterial_x0b4e")
 surface_material_override/0 = SubResource("ShaderMaterial_2l3s0")
 
 [node name="martillo" parent="." index="3"]
-transform = Transform3D(0.99984986, -9.1297574e-05, 0.017316798, -0.012920318, 0.66188675, 0.7494927, -0.01153018, -0.7496041, 0.6617862, -0.00151431, 1.03949, 2.29476)
+transform = Transform3D(0.99984974, -9.1297574e-05, 0.017316798, -0.012920317, 0.66188675, 0.7494927, -0.011530179, -0.7496041, 0.6617862, -0.00151431, 1.03949, 2.29476)
+
+[node name="CustomAnimationPlayer" type="AnimationPlayer" parent="." index="10" unique_id=707353873]
+libraries/ = SubResource("AnimationLibrary_f07qb")
+libraries/CUSTOM = SubResource("AnimationLibrary_kgvwc")
+speed_scale = 3.0
+script = ExtResource("7_a65i4")

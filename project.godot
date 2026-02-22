@@ -22,6 +22,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 ErrorHandlerUtil="*res://src/Core/Scripts/Utils/ErrorHandlerUtil.gd"
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [input]
 
 fire={
@@ -65,5 +69,6 @@ test={
 
 [rendering]
 
-anti_aliasing/quality/msaa_3d=2
-anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/msaa_2d=3
+anti_aliasing/quality/msaa_3d=3
+anti_aliasing/quality/screen_space_aa=2

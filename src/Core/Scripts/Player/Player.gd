@@ -10,6 +10,7 @@ class_name Player
 @export var Gravity: float = 20.0
 
 signal fire_weapon
+signal release_fire_weapon
 
 @onready var PrimaryWeaponSocket: Marker3D = $PrimaryWeaponSocket 
 @onready var SecondaryWeaponSocket: Marker3D = $SecondaryWeaponSocket
@@ -31,9 +32,13 @@ func _physics_process(delta: float) -> void:
 func _ConnectToInputSystem(input_system: InputSystem):
 	input_system.fire_pressed.connect(_OnFirePressed)
 	input_system.move_input.connect(_OnMovement)
+	input_system.fire_released.connect(_OnFireRelased)
 
 func _OnFirePressed():
 	emit_signal("fire_weapon", Vector3(0,0,0))
+
+func _OnFireRelased():
+	emit_signal("release_fire_weapon")
 
 func _OnMovement(dir: Vector2):
 	if _Camera == null:

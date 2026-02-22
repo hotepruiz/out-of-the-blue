@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://chm65jedj15qt"]
 
+[ext_resource type="Script" uid="uid://bx6um6rv7gx34" path="res://src/Gameplay/Levels/main.gd" id="1_f362k"]
 [ext_resource type="Script" uid="uid://d3psuiv4x4tkk" path="res://src/Gameplay/Levels/node.gd" id="1_tp8c8"]
 [ext_resource type="PackedScene" uid="uid://2r6b1bionkvp" path="res://src/Gameplay/Entities/Player/Player.tscn" id="4_ycxtk"]
 [ext_resource type="Script" uid="uid://dq8thfma3ay2j" path="res://src/Core/Scripts/Player/InputSystem.gd" id="5_tfum8"]
@@ -21,6 +22,7 @@ sky_custom_fov = 9.1
 ambient_light_color = Color(0.663679, 0.545121, 0.424025, 1)
 
 [node name="Main" type="Node3D" unique_id=764850792]
+script = ExtResource("1_f362k")
 
 [node name="Node" type="Node" parent="." unique_id=1555477091]
 script = ExtResource("1_tp8c8")
@@ -50,5 +52,6 @@ light_color = Color(0.86504, 0.792619, 0.872896, 1)
 transform = Transform3D(0.765708, -0.643189, 0, 0.643189, 0.765708, 0, 0, 0, 1, 0.300896, 10.222, -17.5055)
 
 [node name="Player" parent="." unique_id=962924011 node_paths=PackedStringArray("_InputSystem", "_Camera") instance=ExtResource("4_ycxtk")]
+transform = Transform3D(-0.0383529, 0, -0.99926424, 0, 1, 0, 0.99926424, 0, -0.0383529, 0, 0, 0)
 _InputSystem = NodePath("../InputSystem")
 _Camera = NodePath("../CameraRig")
