@@ -9,26 +9,26 @@ class_name Weapon
 @onready var _Muzzle : Marker3D = $Muzzle
 @onready var _CooldownTimer : Timer = $Timer
 @onready var _Ejection : Marker3D = $Ejection
-var _AnimationPlayer : AnimationPlayer
+var _AnimationPlayer : WeaponAnimationPlayer
 
 var Ammo: int
 var _CanFire: bool = true
-var _TriggerPressed: bool = true
 
 func _ready():
 	_SetFirerate()
+	_AnimationPlayer = $FNX45_MODEL/CustomAnimationPlayer
 
 func TryFire(direction: Vector3):
-	if _TriggerPressed and _CooldownTimer.is_stopped() and _CanFire:
+	if _CooldownTimer.is_stopped() and _CanFire:
 		_Fire(direction)
+		Ammo -= 1
 
 @warning_ignore("unused_parameter")
 func _Fire(direction: Vector3):
 	_InstanceAudio()
 	_PlayAnimation()
-
-func SetTrigger(new_trigger_status: bool):
-	_TriggerPressed = new_trigger_status
+	
+	_CooldownTimer.start()
 
 #---------------------------------------------------------------------------------------------------
 @warning_ignore("unused_parameter")
@@ -47,7 +47,10 @@ func _PlayAnimation():
 		ErrorHandlerUtil.LogError("OTB#005")
 		return
 	
-	_AnimationPlayer.play(WeaponEnums.AnimationType.keys()[WeaponEnums.AnimationType.FIRE])
+	_AnimationPlayer.PlayFireAnimation()
 #---------------------------------------------------------------------------------------------------
+func OnFireRelease():
+	print("teamo")
+
 func _SetFirerate():
 	_CooldownTimer.wait_time=(60/Firerate)

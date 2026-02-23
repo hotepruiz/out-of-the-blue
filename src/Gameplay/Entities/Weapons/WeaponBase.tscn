@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpsexp5r57pws"]
 
-[ext_resource type="Script" uid="uid://cn21rx7eekcg2" path="res://src/Core/Scripts/Weapons/Weapon.gd" id="1_hc0q8"]
+[ext_resource type="Script" uid="uid://bjmp26c1hbksg" path="res://src/Core/Scripts/Weapons/SemiAutoWeapon.gd" id="1_00hfu"]
 [ext_resource type="PackedScene" uid="uid://cvn52pfh1w6by" path="res://src/Resources/3D/Refined/Weapons/Pistols/Fnx45_model.tscn" id="1_kpbb7"]
 [ext_resource type="Script" uid="uid://cgmriung8mvmu" path="res://src/Core/Scripts/Components/ComponentContainer.gd" id="2_ferru"]
 [ext_resource type="AudioStream" uid="uid://y6ew23akfnjc" path="res://src/Resources/Audio/Weapons/Gunshots/pistol_1.2_audio.wav" id="3_00hfu"]
@@ -15,7 +15,8 @@ size = Vector3(0.856445, 3.19916, 5.72498)
 [node name="Weapon" type="RigidBody3D" unique_id=574157804]
 physics_material_override = SubResource("PhysicsMaterial_kpbb7")
 inertia = Vector3(0, 2.65, 0)
-script = ExtResource("1_hc0q8")
+script = ExtResource("1_00hfu")
+Firerate = 163.4
 
 [node name="FNX45_MODEL" parent="." unique_id=745332743 instance=ExtResource("1_kpbb7")]
 transform = Transform3D(-0.2, 0, -3.019916e-08, 0, 0.2, 0, 3.019916e-08, 0, -0.2, 0, 0, 0.29341137)
@@ -33,6 +34,7 @@ max_db = 5.0
 script = ExtResource("3_mjc86")
 
 [node name="Timer" type="Timer" parent="." unique_id=1575044651]
+one_shot = true
 
 [node name="ComponentContainer" type="Node" parent="." unique_id=911165889]
 script = ExtResource("2_ferru")

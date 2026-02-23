@@ -45,6 +45,9 @@ func _process(_delta):
 		emit_signal("move_input", Vector2.ZERO)
 		return
 	
+	if Input.is_action_pressed("fire"):
+		emit_signal("fire_pressed")
+	
 	var dir := Vector2.ZERO
 	dir.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	dir.y = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")

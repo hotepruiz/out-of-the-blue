@@ -11,4 +11,5 @@ func _OnInteract(interacted_by: Node) -> void:
 		_ParentWeapon.reparent(player.PrimaryWeaponSocket, false)
 		_ParentWeapon.global_transform = player.PrimaryWeaponSocket.global_transform
 		player.fire_weapon.connect(_ParentWeapon.TryFire)
+		player.release_fire_weapon.connect(_ParentWeapon.OnFireRelease)
 	return
